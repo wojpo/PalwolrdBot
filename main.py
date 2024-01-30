@@ -1,9 +1,7 @@
 import discord
 from discord.ext import commands
-import requests
 from utils.Token import token
-from utils.API import apiBaseUrl
-from paldeckEntry import paldeckEntry
+from routes.paldeckEntry import paldeckEntry
 
 intents = discord.Intents.default()
 intents.message_content = True
