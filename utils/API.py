@@ -1,1 +1,1 @@
-apiBaseUrl = 'http://127.0.0.1:8000'  # your API url
+apiBaseUrl = 'https://fastapi-production-e412.up.railway.app'  # your API url

@@ -1,3 +1,5 @@
+import os
+
 import discord
 from discord.ext import commands
 from utils.Token import token
@@ -49,4 +51,4 @@ async def root(ctx: discord.Interaction, palname: str):
     return await skills(ctx, palname)
 
 
-bot.run(f'{token}')
+bot.run(os.environ["DISCORD_TOKEN"])
