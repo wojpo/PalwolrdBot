@@ -41,8 +41,16 @@ async def skills(ctx: discord.Interaction, palname: str):
             color = 0xffe5b4
         if element1 == 'Water':
             color = Color.teal()
-        embed = discord.Embed(title="Work Suitability", color=color)
+        embed = discord.Embed(title="Skills", color=color)
         embed.set_author(name=f"{palname.capitalize()} {palNumber}")
+        embed.add_field(name="lvl 1", value=f"{lvl1}", inline=False)
+        embed.add_field(name="lvl 7", value=f"{lvl7}", inline=False)
+        embed.add_field(name="lvl 15", value=f"{lvl15}", inline=False)
+        embed.add_field(name="lvl 22", value=f"{lvl22}", inline=False)
+        embed.add_field(name="lvl 30", value=f"{lvl30}", inline=False)
+        embed.add_field(name="lvl 40", value=f"{lvl40}", inline=False)
+        embed.add_field(name="lvl 50", value=f"{lvl50}", inline=False)
+        await ctx.response.send_message(embed=embed)
 
     except AttributeError:
         embed = discord.Embed(title="ERROR", description="Wrong pal name given", color=Color.red())

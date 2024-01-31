@@ -19,32 +19,32 @@ async def on_ready():
     synced = await bot.tree.sync()
 
 
-@bot.tree.command(name='paldeck', description="Returns basic info about pals")
+@bot.tree.command(name='paldeck', description="Returns basic info about pals!")
 async def root(ctx: discord.Interaction, palname: str):
     return await paldeck(ctx, palname)
 
 
-@bot.tree.command(name='elements', description="Returns info about pals elements")
+@bot.tree.command(name='elements', description="Returns info about pals elements!")
 async def root(ctx: discord.Interaction, palname: str):
     return await elements(ctx, palname)
 
 
-@bot.tree.command(name='drops', description="Returns info about pals drops")
+@bot.tree.command(name='drops', description="Returns info about pals drops!")
 async def root(ctx: discord.Interaction, palname: str):
     return await drops(ctx, palname)
 
 
-@bot.tree.command(name='partner_skill', description="Returns info about pals Partner Skill")
+@bot.tree.command(name='partner_skill', description="Returns info about pals Partner Skill!")
 async def root(ctx: discord.Interaction, palname: str):
     return await partner_skill(ctx, palname)
 
 
-@bot.tree.command(name='work_suitability', description="Returns info about pals Work Suitability")
+@bot.tree.command(name='work_suitability', description="Returns info about pals Work Suitability!")
 async def root(ctx: discord.Interaction, palname: str):
     return await work_suitability(ctx, palname)
 
 
-@bot.tree.command(name='skills', description="Returns info about pals skills")
+@bot.tree.command(name='skills', description="Returns info about pals skills!")
 async def root(ctx: discord.Interaction, palname: str):
     return await skills(ctx, palname)
 

@@ -13,6 +13,7 @@ async def paldeck(ctx: discord.Interaction, palname: str):
         palNumber = paldeck.get('PaldeckNumber')
         paldeckEntry = paldeck.get('PaldeckEntry')
         palAppearance = paldeck.get('PalAppearance')
+        palIcon = json_data.get('paliconurl')
 
         # EMBED COLOR DEPEND ON PAL ELEMENT
         palelements = json_data.get('Elements')
