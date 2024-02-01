@@ -9,6 +9,7 @@ from routes.drops import drops
 from routes.partnerSkill import partner_skill
 from routes.workSuitability import work_suitability
 from routes.skills import skills
+from routes.info import info
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -50,5 +51,7 @@ async def root(ctx: discord.Interaction, palname: str):
 async def root(ctx: discord.Interaction, palname: str):
     return await skills(ctx, palname)
 
-
+@bot.tree.command(name='help', description='Returns info about bot')
+async def root(ctx: discord.Interaction):
+    return await info(ctx)
 bot.run(os.environ["DISCORD_TOKEN"])
