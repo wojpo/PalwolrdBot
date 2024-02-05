@@ -2,6 +2,7 @@ import discord
 from discord import Color
 import requests
 from utils.API import apiBaseUrl
+from utils.elemDict import elemDict
 
 
 async def drops(ctx: discord.Interaction, palname: str):
@@ -16,32 +17,13 @@ async def drops(ctx: discord.Interaction, palname: str):
         drop2 = paldrops.get('Drop2')
         drop3 = paldrops.get('Drop3')
         drop4 = paldrops.get('Drop4')
-
-        # EMBED COLOR DEPEND ON PAL ELEMENT
         palelements = json_data.get('Elements')
         element1 = palelements.get('Element1')
-        if element1 == 'Dark':
-            color = Color.dark_gray()
-        if element1 == 'Dragon':
-            color = Color.purple()
-        if element1 == 'Electricity':
-            color = Color.yellow()
-        if element1 == 'Fire':
-            color = Color.red()
-        if element1 == 'Grass':
-            color = Color.green()
-        if element1 == 'Ground':
-            color = 0x964b00
-        if element1 == 'Ice':
-            color = Color.blue()
-        if element1 == 'Neutral':
-            color = 0xffe5b4
-        if element1 == 'Water':
-            color = Color.teal()
 
+        color = elemDict[element1]
         embed = discord.Embed(title="Drops", color=color)
         embed.set_author(name=f"{palname.capitalize()} {palNumber}")
-        embed.add_field(name="Drop 1", value=f"{drop1}",inline=False)
+        embed.add_field(name="Drop 1", value=f"{drop1}", inline=False)
         if drop2 != "None":
             embed.add_field(name="Drop 2", value=f"{drop2}", inline=False)
         if drop3 != "None":
